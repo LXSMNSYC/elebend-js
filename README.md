@@ -59,14 +59,16 @@ Elebend is an object whose entries are functions that allows you to create an sp
 For example, let's try to create a simple webpage using Elebend:
 
 ```js
-html([
-  head([
-    title('Elebend Example'),
-  ]),
-  body([
-    
-  ]),
-])
+const { html, head, title, body, h1, p } = Elebend;
+html(() => {
+  head(() => {
+    title('This is an example.');
+  });
+  body(() => {
+    h1('Example header');
+    p('Example content');
+  });
+});
 ```
 
 ## Build
