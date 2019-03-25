@@ -126,7 +126,6 @@ const {
   optgroup,
   option,
   textarea,
-  keygen,
   output,
   progress,
   meter,
@@ -142,7 +141,7 @@ const {
 } = Elebend;
 
 /* eslint-disable no-undef */
-describe('Eleband', () => {
+describe('Elebend', () => {
   /**
    *
    */
