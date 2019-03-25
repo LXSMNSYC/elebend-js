@@ -14,9 +14,11 @@ var Elebend = (function () {
 
   let context;
 
+  const text = str => document.createTextNode(str);
+
   const renderBody = (el, body) => {
     if (typeof body === 'string') {
-      el.appendChild(document.createTextNode(body));
+      el.appendChild(text);
       return [el, T];
     }
 
@@ -196,6 +198,7 @@ var Elebend = (function () {
   }
 
   Elebend.element = element;
+  Elebend.text = text;
 
   Object.freeze(Elebend);
 
