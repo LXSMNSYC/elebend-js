@@ -15,6 +15,14 @@ let context;
 
 const text = str => document.createTextNode(str);
 
+const addAttributes = (el, attr) => {
+  if (typeof attr === 'object') {
+    for (const [k, v] of Object.entries(attr)) {
+      el.setAttribute(k, v);
+    }
+  }
+};
+
 const renderBody = (el, body) => {
   if (typeof body === 'string') {
     el.appendChild(text(body));
@@ -39,14 +47,14 @@ const element = (name, attributes, content, body) => {
     context.appendChild(el);
   }
 
-  const r = renderBody(attributes);
-
-  if (!r[1] && attributes instanceof Object) {
-    for (const [k, v] of Object.entries(attributes)) {
-      el.setAttribute(k, v);
+  if (content) {
+    const r = renderBody(el, attributes);
+    if (!r[1]) {
+      addAttributes(el, attributes);
+      return renderBody(el, body)[0];
     }
-
-    return content ? renderBody(el, body)[0] : el;
+  } else {
+    addAttributes(el, attributes);
   }
 
   return el;
