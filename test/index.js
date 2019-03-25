@@ -63,7 +63,7 @@ const {
   data,
   time,
   code,
-  // var,
+  var: Var,
   samp,
   kbd,
   sub,
@@ -79,6 +79,7 @@ const {
   rp,
   bdi,
   bdo,
+  span,
   br,
   wbr,
   /**
@@ -92,6 +93,7 @@ const {
   img,
   iframe,
   embed,
+  object,
   param,
   video,
   audio,
@@ -326,6 +328,391 @@ describe('Eleband', () => {
   describe('main', () => {
     it('should create an HTMLElement', () => {
       assert(main() instanceof HTMLElement);
+    });
+  });
+  /**
+   * Text Semantics
+   */
+  describe('a', () => {
+    it('should create an HTMLAnchorElement', () => {
+      assert(a() instanceof HTMLAnchorElement);
+    });
+  });
+  describe('em', () => {
+    it('should create an HTMLElement', () => {
+      assert(em() instanceof HTMLElement);
+    });
+  });
+  describe('strong', () => {
+    it('should create an HTMLElement', () => {
+      assert(strong() instanceof HTMLElement);
+    });
+  });
+  describe('small', () => {
+    it('should create an HTMLElement', () => {
+      assert(small() instanceof HTMLElement);
+    });
+  });
+  describe('s', () => {
+    it('should create an HTMLElement', () => {
+      assert(s() instanceof HTMLElement);
+    });
+  });
+  describe('cite', () => {
+    it('should create an HTMLElement', () => {
+      assert(cite() instanceof HTMLElement);
+    });
+  });
+  describe('q', () => {
+    it('should create an HTMLQuoteElement', () => {
+      assert(q() instanceof HTMLQuoteElement);
+    });
+  });
+  describe('dfn', () => {
+    it('should create an HTMLElement', () => {
+      assert(dfn() instanceof HTMLElement);
+    });
+  });
+  describe('abbr', () => {
+    it('should create an HTMLElement', () => {
+      assert(abbr() instanceof HTMLElement);
+    });
+  });
+  describe('abbr', () => {
+    it('should create an HTMLElement', () => {
+      assert(abbr() instanceof HTMLElement);
+    });
+  });
+  describe('data', () => {
+    it('should create an HTMLDataElement', () => {
+      assert(data() instanceof HTMLDataElement);
+    });
+  });
+  describe('time', () => {
+    it('should create an HTMLTimeElement', () => {
+      assert(time() instanceof HTMLTimeElement);
+    });
+  });
+  describe('code', () => {
+    it('should create an HTMLElement', () => {
+      assert(code() instanceof HTMLElement);
+    });
+  });
+  describe('var', () => {
+    it('should create an HTMLElement', () => {
+      assert(Var() instanceof HTMLElement);
+    });
+  });
+  describe('samp', () => {
+    it('should create an HTMLElement', () => {
+      assert(samp() instanceof HTMLElement);
+    });
+  });
+  describe('kbd', () => {
+    it('should create an HTMLElement', () => {
+      assert(kbd() instanceof HTMLElement);
+    });
+  });
+  describe('sub', () => {
+    it('should create an HTMLElement', () => {
+      assert(sub() instanceof HTMLElement);
+    });
+  });
+  describe('sup', () => {
+    it('should create an HTMLElement', () => {
+      assert(sup() instanceof HTMLElement);
+    });
+  });
+  describe('i', () => {
+    it('should create an HTMLElement', () => {
+      assert(i() instanceof HTMLElement);
+    });
+  });
+  describe('b', () => {
+    it('should create an HTMLElement', () => {
+      assert(b() instanceof HTMLElement);
+    });
+  });
+  describe('u', () => {
+    it('should create an HTMLElement', () => {
+      assert(u() instanceof HTMLElement);
+    });
+  });
+  describe('mark', () => {
+    it('should create an HTMLElement', () => {
+      assert(mark() instanceof HTMLElement);
+    });
+  });
+  describe('ruby', () => {
+    it('should create an HTMLElement', () => {
+      assert(ruby() instanceof HTMLElement);
+    });
+  });
+  describe('rb', () => {
+    it('should create an HTMLElement', () => {
+      assert(rb() instanceof HTMLElement);
+    });
+  });
+  describe('rt', () => {
+    it('should create an HTMLElement', () => {
+      assert(rt() instanceof HTMLElement);
+    });
+  });
+  describe('rtc', () => {
+    it('should create an HTMLElement', () => {
+      assert(rtc() instanceof HTMLElement);
+    });
+  });
+  describe('rp', () => {
+    it('should create an HTMLElement', () => {
+      assert(rp() instanceof HTMLElement);
+    });
+  });
+  describe('bdi', () => {
+    it('should create an HTMLElement', () => {
+      assert(bdi() instanceof HTMLElement);
+    });
+  });
+  describe('bdo', () => {
+    it('should create an HTMLElement', () => {
+      assert(bdo() instanceof HTMLElement);
+    });
+  });
+  describe('span', () => {
+    it('should create an HTMLSpanElement', () => {
+      assert(span() instanceof HTMLSpanElement);
+    });
+  });
+  describe('br', () => {
+    it('should create an HTMLBRElement', () => {
+      assert(br() instanceof HTMLBRElement);
+    });
+  });
+  describe('wbr', () => {
+    it('should create an HTMLElement', () => {
+      assert(wbr() instanceof HTMLElement);
+    });
+  });
+  /**
+   * Edits
+   */
+  describe('ins', () => {
+    it('should create an HTMLModElement', () => {
+      assert(ins() instanceof HTMLModElement);
+    });
+  });
+  describe('del', () => {
+    it('should create an HTMLModElement', () => {
+      assert(del() instanceof HTMLModElement);
+    });
+  });
+  /**
+   * Embedded content
+   */
+  describe('img', () => {
+    it('should create an HTMLImageElement', () => {
+      assert(img() instanceof HTMLImageElement);
+    });
+  });
+  describe('iframe', () => {
+    it('should create an HTMLIFrameElement', () => {
+      assert(iframe() instanceof HTMLIFrameElement);
+    });
+  });
+  describe('embed', () => {
+    it('should create an HTMLEmbedElement', () => {
+      assert(embed() instanceof HTMLEmbedElement);
+    });
+  });
+  describe('object', () => {
+    it('should create an HTMLObjectElement', () => {
+      assert(object() instanceof HTMLObjectElement);
+    });
+  });
+  describe('param', () => {
+    it('should create an HTMLParamElement', () => {
+      assert(param() instanceof HTMLParamElement);
+    });
+  });
+  describe('video', () => {
+    it('should create an HTMLVideoElement', () => {
+      assert(video() instanceof HTMLVideoElement);
+    });
+  });
+  describe('audio', () => {
+    it('should create an HTMLAudioElement', () => {
+      assert(audio() instanceof HTMLAudioElement);
+    });
+  });
+  describe('source', () => {
+    it('should create an HTMLSourceElement', () => {
+      assert(source() instanceof HTMLSourceElement);
+    });
+  });
+  describe('track', () => {
+    it('should create an HTMLTrackElement', () => {
+      assert(track() instanceof HTMLTrackElement);
+    });
+  });
+  describe('map', () => {
+    it('should create an HTMLMapElement', () => {
+      assert(map() instanceof HTMLMapElement);
+    });
+  });
+  describe('area', () => {
+    it('should create an HTMLAreaElement', () => {
+      assert(area() instanceof HTMLAreaElement);
+    });
+  });
+
+  /**
+   * Tabular data
+   */
+  describe('table', () => {
+    it('should create an HTMLTableElement', () => {
+      assert(table() instanceof HTMLTableElement);
+    });
+  });
+  describe('caption', () => {
+    it('should create an HTMLTableCaptionElement', () => {
+      assert(caption() instanceof HTMLTableCaptionElement);
+    });
+  });
+  describe('colgroup', () => {
+    it('should create an HTMLTableColElement', () => {
+      assert(colgroup() instanceof HTMLTableColElement);
+    });
+  });
+  describe('col', () => {
+    it('should create an HTMLTableColElement', () => {
+      assert(col() instanceof HTMLTableColElement);
+    });
+  });
+  describe('tbody', () => {
+    it('should create an HTMLTableSectionElement', () => {
+      assert(tbody() instanceof HTMLTableSectionElement);
+    });
+  });
+  describe('thead', () => {
+    it('should create an HTMLTableSectionElement', () => {
+      assert(thead() instanceof HTMLTableSectionElement);
+    });
+  });
+  describe('tfoot', () => {
+    it('should create an HTMLTableSectionElement', () => {
+      assert(tfoot() instanceof HTMLTableSectionElement);
+    });
+  });
+  describe('td', () => {
+    it('should create an HTMLTableCellElement', () => {
+      assert(td() instanceof HTMLTableCellElement);
+    });
+  });
+  describe('tr', () => {
+    it('should create an HTMLTableRowElement', () => {
+      assert(tr() instanceof HTMLTableRowElement);
+    });
+  });
+  describe('th', () => {
+    it('should create an HTMLTableCellElement', () => {
+      assert(th() instanceof HTMLTableCellElement);
+    });
+  });
+
+  /**
+   * Forms
+   */
+  describe('form', () => {
+    it('should create an HTMLFormElement', () => {
+      assert(form() instanceof HTMLFormElement);
+    });
+  });
+  describe('label', () => {
+    it('should create an HTMLLabelElement', () => {
+      assert(label() instanceof HTMLLabelElement);
+    });
+  });
+  describe('input', () => {
+    it('should create an HTMLInputElement', () => {
+      assert(input() instanceof HTMLInputElement);
+    });
+  });
+  describe('button', () => {
+    it('should create an HTMLButtonElement', () => {
+      assert(button() instanceof HTMLButtonElement);
+    });
+  });
+  describe('select', () => {
+    it('should create an HTMLSelectElement', () => {
+      assert(select() instanceof HTMLSelectElement);
+    });
+  });
+  describe('datalist', () => {
+    it('should create an HTMLDataListElement', () => {
+      assert(datalist() instanceof HTMLDataListElement);
+    });
+  });
+  describe('optgroup', () => {
+    it('should create an HTMLOptGroupElement', () => {
+      assert(optgroup() instanceof HTMLOptGroupElement);
+    });
+  });
+  describe('option', () => {
+    it('should create an HTMLOptionElement', () => {
+      assert(option() instanceof HTMLOptionElement);
+    });
+  });
+  describe('textarea', () => {
+    it('should create an HTMLTextAreaElement', () => {
+      assert(textarea() instanceof HTMLTextAreaElement);
+    });
+  });
+  describe('output', () => {
+    it('should create an HTMLOutputElement', () => {
+      assert(output() instanceof HTMLOutputElement);
+    });
+  });
+  describe('progress', () => {
+    it('should create an HTMLProgressElement', () => {
+      assert(progress() instanceof HTMLProgressElement);
+    });
+  });
+  describe('meter', () => {
+    it('should create an HTMLMeterElement', () => {
+      assert(meter() instanceof HTMLMeterElement);
+    });
+  });
+  describe('fieldset', () => {
+    it('should create an HTMLFieldSetElement', () => {
+      assert(fieldset() instanceof HTMLFieldSetElement);
+    });
+  });
+  describe('legend', () => {
+    it('should create an HTMLLegendElement', () => {
+      assert(legend() instanceof HTMLLegendElement);
+    });
+  });
+  /**
+   * Scripting
+   */
+  describe('script', () => {
+    it('should create an HTMLScriptElement', () => {
+      assert(script() instanceof HTMLScriptElement);
+    });
+  });
+  describe('noscript', () => {
+    it('should create an HTMLElement', () => {
+      assert(noscript() instanceof HTMLElement);
+    });
+  });
+  describe('template', () => {
+    it('should create an HTMLTemplateElement', () => {
+      assert(template() instanceof HTMLTemplateElement);
+    });
+  });
+  describe('canvas', () => {
+    it('should create an HTMLCanvasElement', () => {
+      assert(canvas() instanceof HTMLCanvasElement);
     });
   });
 });
