@@ -715,4 +715,14 @@ describe('Eleband', () => {
       assert(canvas() instanceof HTMLCanvasElement);
     });
   });
+
+  html({ lang: 'en' }, () => {
+    head(() => {
+      title('This is an example.');
+    });
+    body(() => {
+      h1('Example header');
+      p('Example content');
+    });
+  });
 });
