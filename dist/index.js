@@ -18,7 +18,7 @@ var Elebend = (function () {
 
   const renderBody = (el, body) => {
     if (typeof body === 'string') {
-      el.appendChild(text);
+      el.appendChild(text(body));
       return [el, T];
     }
 
