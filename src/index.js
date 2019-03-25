@@ -126,6 +126,7 @@ const ELEMENTS = {
   rp: T,
   bdi: T,
   bdo: T,
+  span: T,
   br: F,
   wbr: F,
   /**
@@ -139,6 +140,7 @@ const ELEMENTS = {
   img: F,
   iframe: T,
   embed: F,
+  object: T,
   param: F,
   video: T,
   audio: T,
@@ -171,7 +173,6 @@ const ELEMENTS = {
   optgroup: T,
   option: T,
   textarea: T,
-  keygen: F,
   output: T,
   progress: T,
   meter: T,
