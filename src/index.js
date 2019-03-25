@@ -11,9 +11,11 @@ const Elebend = {};
 
 let context;
 
+const text = str => document.createTextNode(str);
+
 const renderBody = (el, body) => {
   if (typeof body === 'string') {
-    el.appendChild(document.createTextNode(body));
+    el.appendChild(text);
     return [el, T];
   }
 
@@ -193,6 +195,7 @@ for (const [k, v] of Object.entries(ELEMENTS)) {
 }
 
 Elebend.element = element;
+Elebend.text = text;
 
 Object.freeze(Elebend);
 
