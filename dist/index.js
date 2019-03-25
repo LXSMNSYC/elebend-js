@@ -129,6 +129,7 @@ var Elebend = (function () {
     rp: T,
     bdi: T,
     bdo: T,
+    span: T,
     br: F,
     wbr: F,
     /**
@@ -142,6 +143,7 @@ var Elebend = (function () {
     img: F,
     iframe: T,
     embed: F,
+    object: T,
     param: F,
     video: T,
     audio: T,
@@ -174,7 +176,6 @@ var Elebend = (function () {
     optgroup: T,
     option: T,
     textarea: T,
-    keygen: F,
     output: T,
     progress: T,
     meter: T,
