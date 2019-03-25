@@ -1,5 +1,13 @@
 # elebend-js
+
 Easily create HTML5 elements
+
+| Platform | Build status | 
+| Linux | | [![Build Status](https://travis-ci.org/LXSMNSYC/elebend-js.svg?branch=master)](https://travis-ci.org/LXSMNSYC/elebend-js) |
+| Windows | [![Build status](https://ci.appveyor.com/api/projects/status/197g3hvxqayhy9hb?svg=true)](https://ci.appveyor.com/project/LXSMNSYC/elebend-js) |
+
+[![codecov](https://codecov.io/gh/LXSMNSYC/elebend-js/branch/master/graph/badge.svg)](https://codecov.io/gh/LXSMNSYC/elebend-js)
+[![Known Vulnerabilities](https://snyk.io/test/github/LXSMNSYC/elebend-js/badge.svg?targetFile=package.json)](https://snyk.io/test/github/LXSMNSYC/elebend-js?targetFile=package.json)
 
 ## Example
 
