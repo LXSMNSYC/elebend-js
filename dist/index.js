@@ -5,14 +5,10 @@ var Elebend = (function () {
   /* eslint-disable no-loop-func */
   const Elebend = {};
 
-  const element = (name, attributes, content, body) => {
-    const el = document.createElement(name);
-
-    for (const [k, v] of Object.entries(attributes)) {
-      el.setAttribute(k, v);
-    }
-
-    if (content) {
+  const renderBody = (el, body) => {
+    if (typeof body === 'string') {
+      el.appendChild(document.createTextNode(body));
+    } else if (body instanceof Array) {
       for (const c of body) {
         if (c instanceof HTMLElement || c instanceof Text) {
           el.appendChild(c);
@@ -20,6 +16,23 @@ var Elebend = (function () {
           el.appendChild(document.createTextNode(c));
         }
       }
+    }
+  };
+
+  const element = (name, attributes, content, body) => {
+    const el = document.createElement(name);
+
+    if (attributes instanceof Object) {
+      for (const [k, v] of Object.entries(attributes)) {
+        el.setAttribute(k, v);
+      }
+    } else if (attributes instanceof Array && content) {
+      renderBody(el, attributes);
+      return el;
+    }
+
+    if (content) {
+      renderBody(el, body);
     }
 
     return el;
