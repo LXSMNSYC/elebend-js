@@ -1,6 +1,6 @@
 {
   "name": "elebend-js",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Easily create HTML5 elements",
   "main": "index.js",
   "scripts": {
