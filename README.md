@@ -2,7 +2,11 @@
 
 Easily create HTML5 elements
 
-| Platform | Build status | 
+[![NPM](https://nodei.co/npm/elebend-js.png)](https://nodei.co/npm/elebend-js/)
+[![](https://data.jsdelivr.com/v1/package/npm/elebend-js/badge)](https://www.jsdelivr.com/package/npm/elebend-js)
+
+| Platform | Build status |
+| --- | --- |
 | Linux | | [![Build Status](https://travis-ci.org/LXSMNSYC/elebend-js.svg?branch=master)](https://travis-ci.org/LXSMNSYC/elebend-js) |
 | Windows | [![Build status](https://ci.appveyor.com/api/projects/status/197g3hvxqayhy9hb?svg=true)](https://ci.appveyor.com/project/LXSMNSYC/elebend-js) |
 
@@ -103,3 +107,8 @@ To define a text node, you can use ```Elebend.text(string)```.
 Calling any Elebend function automatically appends to its Elebend callee (given that the function is called in an Elebend callback).
 
 ## Build
+
+```bash
+npm install
+npm run build
+```
