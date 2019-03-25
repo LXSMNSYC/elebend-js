@@ -3,40 +3,6 @@ var Elebend = (function () {
 
   /* eslint-disable no-restricted-syntax */
   /* eslint-disable no-loop-func */
-  const Elebend = {};
-
-  const renderBody = (el, body) => {
-    if (typeof body === 'string') {
-      el.appendChild(document.createTextNode(body));
-    } else if (body instanceof Array) {
-      for (const c of body) {
-        if (c instanceof HTMLElement || c instanceof Text) {
-          el.appendChild(c);
-        } else if (typeof c === 'string') {
-          el.appendChild(document.createTextNode(c));
-        }
-      }
-    }
-  };
-
-  const element = (name, attributes, content, body) => {
-    const el = document.createElement(name);
-
-    if (attributes instanceof Object) {
-      for (const [k, v] of Object.entries(attributes)) {
-        el.setAttribute(k, v);
-      }
-    } else if (attributes instanceof Array && content) {
-      renderBody(el, attributes);
-      return el;
-    }
-
-    if (content) {
-      renderBody(el, body);
-    }
-
-    return el;
-  };
 
   /**
    * To mess with the compressors
@@ -44,7 +10,49 @@ var Elebend = (function () {
   const T = true;
   const F = false;
 
+  const Elebend = {};
+
+  let context;
+
+  const renderBody = (el, body) => {
+    if (typeof body === 'string') {
+      el.appendChild(document.createTextNode(body));
+      return [el, T];
+    }
+
+    if (typeof body === 'function') {
+      const parent = context;
+      context = el;
+      body();
+      context = parent;
+      return [el, T];
+    }
+
+    return [el, F];
+  };
+
+  const element = (name, attributes, content, body) => {
+    const el = document.createElement(name);
+
+    if (typeof context !== 'undefined') {
+      context.appendChild(el);
+    }
+
+    const r = renderBody(attributes);
+
+    if (!r[1] && attributes instanceof Object) {
+      for (const [k, v] of Object.entries(attributes)) {
+        el.setAttribute(k, v);
+      }
+
+      return content ? renderBody(el, body)[0] : el;
+    }
+
+    return el;
+  };
+
   const ELEMENTS = {
+    html: T,
     /**
      * Document metadata
      */
