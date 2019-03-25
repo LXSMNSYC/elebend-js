@@ -25,7 +25,7 @@ var Elebend = (function () {
     if (typeof body === 'function') {
       const parent = context;
       context = el;
-      body();
+      body(el);
       context = parent;
       return [el, T];
     }
