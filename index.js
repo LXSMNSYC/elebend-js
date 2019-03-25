@@ -24,7 +24,7 @@ const renderBody = (el, body) => {
   if (typeof body === 'function') {
     const parent = context;
     context = el;
-    body();
+    body(el);
     context = parent;
     return [el, T];
   }
