@@ -4,17 +4,20 @@ Easily create HTML5 elements
 ## Example
 
 ```js
-const { main, div, p, h1 } = Eleband;
+const { html, head, title, body, h1, p } = Elebend;
 
-main([
-  div([
-    h1('This is a title'),
-    p('This is a body'),
-  ]),
-]);
+html(() => {
+  head(() => {
+    title('This is an example.');
+  });
+  body(() => {
+    h1('Example header');
+    p('Example content');
+  });
+});
 ```
 
-## But why?
+## But why
 
 Can't really say, but one of the reasons why I made this is to personally use it for a project I am working on.
 
@@ -60,7 +63,7 @@ For example, let's try to create a simple webpage using Elebend:
 
 ```js
 const { html, head, title, body, h1, p } = Elebend;
-html(() => {
+const el = html(() => {
   head(() => {
     title('This is an example.');
   });
@@ -70,5 +73,25 @@ html(() => {
   });
 });
 ```
+
+In this example, we created a fully built hiearchy for a single element, in which we can append into another element to render it.
+
+#### The API
+
+```
+Elebend.tagname(attr: string | function | object [, body: string | function | object]);
+```
+
+Where:
+
+* ```tagname``` is a name equivalent to an HTML5 tag e.g. a, p, div, main, etc.
+* ```attr``` is the element's attributes IF it is an object provided. If it is a string or a function, ```attr``` is treated as a content body.
+* ```body``` is an optional parameter, which is the content body of the element. Self-closing tags completely ignores this parameter.
+
+Refer to the [HTML5 Spec](https://www.w3.org/TR/html50/dom.html) for the element tags.
+
+To define a text node, you can use ```Elebend.text(string)```.
+
+Calling any Elebend function automatically appends to its Elebend callee (given that the function is called in an Elebend callback).
 
 ## Build
