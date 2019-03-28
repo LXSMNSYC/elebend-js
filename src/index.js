@@ -11,7 +11,13 @@ const Elebend = {};
 
 let context;
 
-const text = str => document.createTextNode(str);
+const text = (str) => {
+  const el = document.createTextNode(str);
+  if (typeof context !== 'undefined') {
+    context.appendChild(el);
+  }
+  return el;
+};
 
 const addAttributes = (el, attr) => {
   if (typeof attr === 'object') {
@@ -23,7 +29,7 @@ const addAttributes = (el, attr) => {
 
 const renderBody = (el, body) => {
   if (typeof body === 'string') {
-    el.appendChild(text(body));
+    el.appendChild(document.createTextNode(body));
     return [el, T];
   }
 
