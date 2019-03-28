@@ -28,6 +28,10 @@ const addAttributes = (el, attr) => {
 };
 
 const renderBody = (el, body) => {
+  if (body == null ) {
+    el.appendChild(document.createTextNode(''));
+    return [el, T];
+  }
   if (typeof body === 'string') {
     el.appendChild(document.createTextNode(body));
     return [el, T];
