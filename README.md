@@ -18,11 +18,11 @@ Easily create HTML5 elements
 ```js
 const { html, head, title, body, h1, p } = Elebend;
 
-html(() => {
-  head(() => {
+html((context) => {
+  head((context) => {
     title('This is an example.');
   });
-  body(() => {
+  body((context) => {
     h1('Example header');
     p('Example content');
   });
@@ -105,6 +105,8 @@ Refer to the [HTML5 Spec](https://www.w3.org/TR/html50/dom.html) for the element
 To define a text node, you can use ```Elebend.text(string)```.
 
 Calling any Elebend function automatically appends to its Elebend callee (given that the function is called in an Elebend callback).
+
+If the given body/attr is a callback, that callback receives a single parameter, context, which points to the parent node.
 
 ## Build
 
